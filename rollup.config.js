@@ -5,13 +5,12 @@ import nodeGlobals from 'rollup-plugin-node-globals';
 import nodeBuiltins from 'rollup-plugin-node-builtins';
 import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
-import pascalCase from 'pascal-case';
 import pkg from './package.json';
 
 export default {
   input: 'es/index.js',
   output: {
-    name: pascalCase(pkg.name),
+    name: (pkg.name),
     file: 'dist/bundle.js',
     format: 'umd',
     exports: 'named',
